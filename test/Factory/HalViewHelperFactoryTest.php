@@ -39,6 +39,12 @@ class HalViewHelperFactoryTest extends TestCase
             ->will($this->returnValue(new HydratorPluginManager()));
 
         $services->setService('ZF\Hal\MetadataMap', $metadataMap);
+        
+        
+        $halPlugin = $this->getMock('ZF\Hal\Plugin\Hal');
+
+        $services->setService('ZF\Hal\Plugin\Hal', $halPlugin);
+        
 
         $this->pluginManager = $this->getMock('Zend\ServiceManager\AbstractPluginManager');
 
